@@ -209,7 +209,11 @@
     <div class="container">
       <h2>Booking / Contact</h2>
       <div class="grid" style="grid-template-columns:1.1fr .9fr">
-        <form class="card" action="https://formspree.io/f/xdklabjj" method="POST">
+        <form class="card" id="contactForm" action="https://formspree.io/f/xdklabjj" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New message from DROOL VS site" />
+          <!-- Honeypot to reduce spam -->
+          <label class="tiny" style="position:absolute;left:-9999px;opacity:0" for="website">Website</label>
+          <input id="website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" />
           <div class="row">
             <div>
               <label class="tiny" for="first">First name</label>
@@ -236,6 +240,9 @@
           </div>
           <button class="btn" type="submit">Send</button>
           <input type="hidden" name="form_name" value="droolvs_site_contact" />
+          <button class="btn" type="submit" id="sendBtn">Send</button>
+          <input type="hidden" name="form_name" value="droolvs_site_contact" />
+          <p id="formNote" class="tiny" style="margin-top:8px;color:var(--muted)" aria-live="polite"></p>
         </form>
         <div class="card">
           <div class="pill" style="margin-bottom:12px">Info</div>
@@ -268,6 +275,40 @@
     });
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+      // Formspree AJAX submit for inline success/error
+    (function(){
+      const form = document.getElementById('contactForm');
+      const note = document.getElementById('formNote');
+      const btn  = document.getElementById('sendBtn');
+      if(!form) return;
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        // simple honeypot check
+        if(document.getElementById('website')?.value){ return; }
+        btn.disabled = true; btn.textContent = 'Sending…'; note.textContent = '';
+        const data = Object.fromEntries(new FormData(form).entries());
+        try{
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          if(res.ok){
+            form.reset();
+            note.style.color = '#88f0a1';
+            note.textContent = 'Thanks! Your message was sent.';
+          } else {
+            note.style.color = '#ff9aa2';
+            note.textContent = 'Hmm, something went wrong. Try again or email me directly.';
+          }
+        }catch(err){
+          note.style.color = '#ff9aa2';
+          note.textContent = 'Network error. Please try again.';
+        } finally{
+          btn.disabled = false; btn.textContent = 'Send';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
