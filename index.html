@@ -1,78 +1,273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PlanitDrool — Official Site</title>
-  <meta name="description" content="PlanitDrool • artist, songwriter, producer — new music, shows, and contact." />
-  <link rel="icon" href="favicon.ico" />
+  <title>DROOL VS — Official Site</title>
+  <meta name="description" content="DROOL VS — official site. Music, shows, contact, and links." />
+  <meta property="og:title" content="DROOL VS" />
+  <meta property="og:description" content="Music • Shows • Contact" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f0f14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b10; /* deep charcoal */
+      --panel:#13131a; /* card background */
+      --ink:#f7f7fb; /* primary text */
+      --muted:#b4b5c2;
+      --brand1:#8a5cff; /* purple */
+      --brand2:#00d4ff; /* cyan */
+      --accent:#ff4d8d; /* hot pink */
+      --ring: 0 0 0 2px color-mix(in oklab, var(--brand2) 60%, transparent);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink); background:radial-gradient(1200px 800px at 80% -10%, rgba(138,92,255,.18), transparent 60%),
+                         radial-gradient(1000px 700px at -10% 20%, rgba(0,212,255,.12), transparent 60%),
+                         var(--bg);
+      line-height:1.6; letter-spacing:.2px;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    /* NAV */
+    header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(120%) blur(10px); background:rgba(11,11,16,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.8px}
+    .brand .logo{width:34px; height:34px; border-radius:12px; background:conic-gradient(from 200deg, var(--brand1), var(--brand2), var(--accent)); box-shadow:0 8px 30px rgba(0,212,255,.25)}
+    .brand span{font-size:1.05rem}
+    .nav-links{display:flex; gap:18px}
+    .nav-links a{opacity:.9}
+    .nav-links a:hover{opacity:1; text-decoration:underline}
+    .menu-btn{display:none; border:1px solid rgba(255,255,255,.12); background:transparent; color:var(--ink); padding:8px 10px; border-radius:10px}
+    @media (max-width: 760px){
+      .nav-links{display:none}
+      .menu-btn{display:inline-flex}
+    }
+    /* HERO */
+    .hero{padding:80px 0 40px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center}
+    @media (max-width: 960px){.hero-grid{grid-template-columns:1fr;}}
+    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:.83rem; color:var(--muted)}
+    .title{font-size:clamp(2rem, 4vw, 3rem); line-height:1.15; margin:12px 0 8px; font-weight:900}
+    .subtitle{color:var(--muted); font-size:1.05rem}
+    .cta-row{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(135deg, rgba(138,92,255,.18), rgba(0,212,255,.08)); color:var(--ink); font-weight:600; box-shadow:0 6px 18px rgba(0,0,0,.25)}
+    .btn.secondary{background:transparent}
+    .card{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:22px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .cover{aspect-ratio:1/1; border-radius:16px; background:linear-gradient(160deg, rgba(255,77,141,.3), rgba(138,92,255,.25) 40%, rgba(0,212,255,.3)); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.2rem; text-transform:uppercase; letter-spacing:1px}
+    /* SECTION */
+    section{padding:48px 0}
+    h2{font-size:1.6rem; margin:0 0 16px}
+    .grid{display:grid; gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 900px){.grid.cols-3{grid-template-columns:1fr}}
+    .muted{color:var(--muted)}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04)}
+    /* LINK ROW */
+    .links{display:flex; gap:10px; flex-wrap:wrap}
+    .link{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:14px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08)}
+    .link:hover{box-shadow:0 6px 20px rgba(0,0,0,.25)}
+    /* EMBEDS */
+    .embed{overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,.1)}
+    /* FORM */
+    form{display:grid; gap:12px}
+    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:#0e0e14; color:var(--ink); outline:none}
+    input:focus, textarea:focus{box-shadow:var(--ring)}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 700px){.row{grid-template-columns:1fr}}
+    footer{padding:30px 0; border-top:1px solid rgba(255,255,255,.08); color:var(--muted)}
+    .tiny{font-size:.85rem}
+  </style>
 </head>
 <body>
-<header class="wrap">
-  <nav class="nav">
-    <a class="logo" href="#">PLANIT<span>DROOL</span></a>
-    <div class="links">
+  <!-- NAV -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Go to top">
+        <span class="logo" aria-hidden="true"></span>
+        <span>DROOL VS</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#music">Music</a>
+        <a href="#shows">Shows</a>
+        <a href="#contact">Contact</a>
+        <a href="#links">Links</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </div>
+  </header>
+  <div id="mobileMenu" hidden style="border-bottom:1px solid rgba(255,255,255,.08); background:rgba(11,11,16,.9);">
+    <div class="container" style="padding:10px 0 14px; display:grid; gap:8px">
       <a href="#music">Music</a>
       <a href="#shows">Shows</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="btn">Contact</a>
+      <a href="#contact">Contact</a>
+      <a href="#links">Links</a>
     </div>
-  </nav>
-  <section class="hero">
-    <h1>Hell of a Ride</h1>
-    <p>Dark hooks. Raw honesty. Baton Rouge roots → LA grind.</p>
-    <a class="cta" href="#music">Listen now</a>
-  </section>
-</header>
+  </div>
 
-<main>
-  <section id="music" class="wrap">
-    <h2>Music</h2>
-    <div class="grid">
-      <!-- Replace these with your real embeds -->
-      <iframe style="border:0" src="https://www.youtube.com/embed/VIDEO_ID" title="PlanitDrool" loading="lazy" allowfullscreen></iframe>
-      <iframe style="border:0" src="https://open.spotify.com/embed/artist/ARTIST_ID" loading="lazy" allow="encrypted-media"></iframe>
-    </div>
-  </section>
-
-  <section id="shows" class="wrap">
-    <h2>Shows</h2>
-    <ul class="shows">
-      <li><strong>TBD</strong> — join the list for first notice</li>
-    </ul>
-  </section>
-
-  <section id="about" class="wrap two-col">
-    <div>
-      <h2>About</h2>
-      <p>PlanitDrool blends emo-rap melodies with gritty storytelling—songs about addiction, love, and survival. Mixing in Pro Tools, building from Baton Rouge to Los Angeles.</p>
-      <div class="social">
-        <a href="https://instagram.com/droolvs" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://youtube.com/@PLANITDROOL" target="_blank" rel="noreferrer">YouTube</a>
-        <a href="#" target="_blank" rel="noreferrer">Spotify</a>
+  <!-- HERO -->
+  <main id="home" class="container hero">
+    <div class="hero-grid">
+      <div>
+        <span class="tag">New single out now</span>
+        <h1 class="title">Dark pop hooks. Hip‑hop energy. Baton Rouge grit.</h1>
+        <p class="subtitle">I make songs that feel like 3AM confessions and freeway chases. Tap in below to listen, follow, and book.</p>
+        <div class="cta-row">
+          <a class="btn" href="#music">Listen now</a>
+          <a class="btn secondary" href="#contact">Book / Contact</a>
+        </div>
+        <div style="margin-top:20px" class="links">
+          <a class="link" href="https://www.youtube.com/@PLANITDROOL" target="_blank" rel="noopener">YouTube</a>
+          <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener">Instagram</a>
+          <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener">Facebook</a>
+          <!-- Add more: Apple Music, Spotify, SoundCloud when ready -->
+        </div>
+      </div>
+      <div class="card cover">
+        <!-- Replace with actual cover art image if you have one -->
+        <span>Cover Art<br><small style="font-weight:600; letter-spacing:.2px">Drag an image here later</small></span>
       </div>
     </div>
-    <img src="hero.jpg" alt="PlanitDrool" />
+  </main>
+
+  <!-- MUSIC -->
+  <section id="music">
+    <div class="container">
+      <h2>Music</h2>
+      <p class="muted tiny">Swap these embeds for your official Spotify/Apple/SoundCloud once your distributor pages are live.</p>
+      <div class="grid cols-3" style="margin-top:14px">
+        <div class="card">
+          <div class="pill">Latest Release</div>
+          <div class="embed" style="margin-top:10px">
+            <!-- Example YouTube embed (placeholder). Replace the video ID -->
+            <iframe width="100%" height="240" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pill">Visualizer</div>
+          <div class="embed" style="margin-top:10px">
+            <iframe width="100%" height="240" src="https://www.youtube.com/embed/5qap5aO4i9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pill">Throwbacks</div>
+          <div class="embed" style="margin-top:10px">
+            <!-- SoundCloud example. Replace with your track/player URL -->
+            <iframe width="100%" height="240" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293" title="SoundCloud Player"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="wrap">
-    <h2>Contact</h2>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="card">
-      <label> Name <input name="name" required></label>
-      <label> Email <input type="email" name="_replyto" required></label>
-      <label> Message <textarea name="message" rows="5" required></textarea></label>
-      <button type="submit">Send</button>
-      <input type="hidden" name="_subject" value="New message from planitdrool site">
-    </form>
+  <!-- SHOWS -->
+  <section id="shows">
+    <div class="container">
+      <h2>Upcoming Shows</h2>
+      <div class="grid">
+        <div class="card" style="display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap">
+          <div>
+            <div style="font-weight:700">Open Mic — Los Angeles</div>
+            <div class="muted tiny">TBA • 8:00 PM • 18+ • Free</div>
+          </div>
+          <a class="btn" href="#contact">RSVP</a>
+        </div>
+        <div class="card" style="display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap">
+          <div>
+            <div style="font-weight:700">Pop‑Up Set — TBD</div>
+            <div class="muted tiny">TBA • 9:30 PM • 18+ • $10</div>
+          </div>
+          <a class="btn" href="#contact">RSVP</a>
+        </div>
+      </div>
+    </div>
   </section>
-</main>
 
-<footer class="wrap footer">
-  <small>© <span id="y"></span> PlanitDrool. All rights reserved.</small>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <!-- LINKS -->
+  <section id="links">
+    <div class="container">
+      <h2>Follow & Stream</h2>
+      <p class="muted tiny">Use this as a mini link‑in‑bio. Add/remove platforms anytime.</p>
+      <div class="links" style="margin-top:10px">
+        <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener">Instagram</a>
+        <a class="link" href="https://www.youtube.com/@PLANITDROOL" target="_blank" rel="noopener">YouTube</a>
+        <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener">Facebook</a>
+        <a class="link" href="#" target="_blank" rel="noopener">Spotify (soon)</a>
+        <a class="link" href="#" target="_blank" rel="noopener">Apple Music (soon)</a>
+        <a class="link" href="#" target="_blank" rel="noopener">SoundCloud</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>Booking / Contact</h2>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr">
+        <form class="card" action="https://formspree.io/f/xdklabjj" method="POST">
+          <div class="row">
+            <div>
+              <label class="tiny" for="first">First name</label>
+              <input id="first" name="first" required placeholder="Jane" />
+            </div>
+            <div>
+              <label class="tiny" for="last">Last name</label>
+              <input id="last" name="last" required placeholder="Doe" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label class="tiny" for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="jane@example.com" />
+            </div>
+            <div>
+              <label class="tiny" for="subject">Subject</label>
+              <input id="subject" name="subject" placeholder="Booking / Collab / Press" />
+            </div>
+          </div>
+          <div>
+            <label class="tiny" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the show, dates, budget, or idea…"></textarea>
+          </div>
+          <button class="btn" type="submit">Send</button>
+          <input type="hidden" name="form_name" value="droolvs_site_contact" />
+        </form>
+        <div class="card">
+          <div class="pill" style="margin-bottom:12px">Info</div>
+          <p class="muted">Serious inquiries only. For features, beats, and show bookings in LA (and beyond), drop details and socials. I usually respond within 24–48 hours.</p>
+          <ul class="muted">
+            <li>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></li>
+            <li>Based in: Los Angeles, CA</li>
+            <li>Genres: Emo rap, alt‑hip‑hop, dark pop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
+      <div class="muted tiny">© <span id="year"></span> DROOL VS · All Rights Reserved</div>
+      <div class="muted tiny">Built with ♥ by you.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () =>{
+      const open = menu.hasAttribute('hidden');
+      if(open){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+      else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
