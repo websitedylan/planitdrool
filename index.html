@@ -14,13 +14,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0b10; /* deep charcoal */
-      --panel:#13131a; /* card background */
-      --ink:#f7f7fb; /* primary text */
+      --bg:#0b0b10;
+      --panel:#13131a;
+      --ink:#f7f7fb;
       --muted:#b4b5c2;
-      --brand1:#8a5cff; /* purple */
-      --brand2:#00d4ff; /* cyan */
-      --accent:#ff4d8d; /* hot pink */
+      --brand1:#8a5cff;
+      --brand2:#00d4ff;
+      --accent:#ff4d8d;
       --ring: 0 0 0 2px color-mix(in oklab, var(--brand2) 60%, transparent);
     }
     *{box-sizing:border-box}
@@ -34,7 +34,6 @@
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    /* NAV */
     header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(120%) blur(10px); background:rgba(11,11,16,.6); border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
     .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.8px}
@@ -44,11 +43,7 @@
     .nav-links a{opacity:.9}
     .nav-links a:hover{opacity:1; text-decoration:underline}
     .menu-btn{display:none; border:1px solid rgba(255,255,255,.12); background:transparent; color:var(--ink); padding:8px 10px; border-radius:10px}
-    @media (max-width: 760px){
-      .nav-links{display:none}
-      .menu-btn{display:inline-flex}
-    }
-    /* HERO */
+    @media (max-width: 760px){.nav-links{display:none}.menu-btn{display:inline-flex}}
     .hero{padding:80px 0 40px}
     .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center}
     @media (max-width: 960px){.hero-grid{grid-template-columns:1fr;}}
@@ -60,7 +55,6 @@
     .btn.secondary{background:transparent}
     .card{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:22px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
     .cover{aspect-ratio:1/1; border-radius:16px; background:linear-gradient(160deg, rgba(255,77,141,.3), rgba(138,92,255,.25) 40%, rgba(0,212,255,.3)); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.2rem; text-transform:uppercase; letter-spacing:1px}
-    /* SECTION */
     section{padding:48px 0}
     h2{font-size:1.6rem; margin:0 0 16px}
     .grid{display:grid; gap:18px}
@@ -68,13 +62,10 @@
     @media (max-width: 900px){.grid.cols-3{grid-template-columns:1fr}}
     .muted{color:var(--muted)}
     .pill{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04)}
-    /* LINK ROW */
     .links{display:flex; gap:10px; flex-wrap:wrap}
     .link{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:14px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08)}
     .link:hover{box-shadow:0 6px 20px rgba(0,0,0,.25)}
-    /* EMBEDS */
     .embed{overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,.1)}
-    /* FORM */
     form{display:grid; gap:12px}
     input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:#0e0e14; color:var(--ink); outline:none}
     input:focus, textarea:focus{box-shadow:var(--ring)}
@@ -85,7 +76,6 @@
   </style>
 </head>
 <body>
-  <!-- NAV -->
   <header>
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Go to top">
@@ -110,7 +100,6 @@
     </div>
   </div>
 
-  <!-- HERO -->
   <main id="home" class="container hero">
     <div class="hero-grid">
       <div>
@@ -125,17 +114,14 @@
           <a class="link" href="https://www.youtube.com/@PLANITDROOL" target="_blank" rel="noopener">YouTube</a>
           <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener">Instagram</a>
           <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener">Facebook</a>
-          <!-- Add more: Apple Music, Spotify, SoundCloud when ready -->
         </div>
       </div>
       <div class="card cover">
-        <!-- Replace with actual cover art image if you have one -->
         <span>Cover Art<br><small style="font-weight:600; letter-spacing:.2px">Drag an image here later</small></span>
       </div>
     </div>
   </main>
 
-  <!-- MUSIC -->
   <section id="music">
     <div class="container">
       <h2>Music</h2>
@@ -144,28 +130,25 @@
         <div class="card">
           <div class="pill">Latest Release</div>
           <div class="embed" style="margin-top:10px">
-            <!-- Example YouTube embed (placeholder). Replace the video ID -->
-            <iframe width="100%" height="240" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="100%" height="240" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
         <div class="card">
           <div class="pill">Visualizer</div>
           <div class="embed" style="margin-top:10px">
-            <iframe width="100%" height="240" src="https://www.youtube.com/embed/5qap5aO4i9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="100%" height="240" src="https://www.youtube.com/embed/5qap5aO4i9A" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
         <div class="card">
           <div class="pill">Throwbacks</div>
           <div class="embed" style="margin-top:10px">
-            <!-- SoundCloud example. Replace with your track/player URL -->
-            <iframe width="100%" height="240" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293" title="SoundCloud Player"></iframe>
+            <iframe width="100%" height="240" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/planitdrool" title="SoundCloud Player"></iframe>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SHOWS -->
   <section id="shows">
     <div class="container">
       <h2>Upcoming Shows</h2>
@@ -188,7 +171,6 @@
     </div>
   </section>
 
-  <!-- LINKS -->
   <section id="links">
     <div class="container">
       <h2>Follow & Stream</h2>
@@ -199,19 +181,17 @@
         <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener">Facebook</a>
         <a class="link" href="#" target="_blank" rel="noopener">Spotify (soon)</a>
         <a class="link" href="#" target="_blank" rel="noopener">Apple Music (soon)</a>
-        <a class="link" href="#" target="_blank" rel="noopener">SoundCloud</a>
+        <a class="link" href="https://soundcloud.com/planitdrool" target="_blank" rel="noopener">SoundCloud</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <h2>Booking / Contact</h2>
       <div class="grid" style="grid-template-columns:1.1fr .9fr">
         <form class="card" id="contactForm" action="https://formspree.io/f/xdklabjj" method="POST" novalidate>
           <input type="hidden" name="_subject" value="New message from DROOL VS site" />
-          <!-- Honeypot to reduce spam -->
           <label class="tiny" style="position:absolute;left:-9999px;opacity:0" for="website">Website</label>
           <input id="website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" />
           <div class="row">
@@ -238,8 +218,6 @@
             <label class="tiny" for="message">Message</label>
             <textarea id="message" name="message" rows="5" placeholder="Tell me about the show, dates, budget, or idea…"></textarea>
           </div>
-          <button class="btn" type="submit">Send</button>
-          <input type="hidden" name="form_name" value="droolvs_site_contact" />
           <button class="btn" type="submit" id="sendBtn">Send</button>
           <input type="hidden" name="form_name" value="droolvs_site_contact" />
           <p id="formNote" class="tiny" style="margin-top:8px;color:var(--muted)" aria-live="polite"></p>
@@ -248,67 +226,6 @@
           <div class="pill" style="margin-bottom:12px">Info</div>
           <p class="muted">Serious inquiries only. For features, beats, and show bookings in LA (and beyond), drop details and socials. I usually respond within 24–48 hours.</p>
           <ul class="muted">
-            <li>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></li>
-            <li>Based in: Los Angeles, CA</li>
-            <li>Genres: Emo rap, alt‑hip‑hop, dark pop</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+            <li>Email: <a href="
 
-  <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
-      <div class="muted tiny">© <span id="year"></span> DROOL VS · All Rights Reserved</div>
-      <div class="muted tiny">Built with ♥ by you.</div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile menu toggle
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn?.addEventListener('click', () =>{
-      const open = menu.hasAttribute('hidden');
-      if(open){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
-      else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
-    });
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-      // Formspree AJAX submit for inline success/error
-    (function(){
-      const form = document.getElementById('contactForm');
-      const note = document.getElementById('formNote');
-      const btn  = document.getElementById('sendBtn');
-      if(!form) return;
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        // simple honeypot check
-        if(document.getElementById('website')?.value){ return; }
-        btn.disabled = true; btn.textContent = 'Sending…'; note.textContent = '';
-        const data = Object.fromEntries(new FormData(form).entries());
-        try{
-          const res = await fetch(form.action, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          });
-          if(res.ok){
-            form.reset();
-            note.style.color = '#88f0a1';
-            note.textContent = 'Thanks! Your message was sent.';
-          } else {
-            note.style.color = '#ff9aa2';
-            note.textContent = 'Hmm, something went wrong. Try again or email me directly.';
-          }
-        }catch(err){
-          note.style.color = '#ff9aa2';
-          note.textContent = 'Network error. Please try again.';
-        } finally{
-          btn.disabled = false; btn.textContent = 'Send';
-        }
-      });
-    })();
-  </script>
-</body>
-</html>
+                        
