@@ -1,322 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DROOL VS — Official Site</title>
-  <meta name="description" content="DROOL VS — official site. Music, shows, contact, and links." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="DROOL VS" />
-  <meta property="og:description" content="Music • Shows • Contact" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.jpg" />
-  <meta name="theme-color" content="#0f0f14" />
-  <link rel="icon" href="/favicon.png" sizes="any" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0b10;
-      --panel:#13131a;
-      --ink:#f7f7fb;
-      --muted:#b4b5c2;
-      --brand1:#8a5cff;
-      --brand2:#00d4ff;
-      --accent:#ff4d8d;
-      --ring: 0 0 0 2px color-mix(in oklab, var(--brand2) 60%, transparent);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      color:var(--ink); background:radial-gradient(1200px 800px at 80% -10%, rgba(138,92,255,.18), transparent 60%),
-                         radial-gradient(1000px 700px at -10% 20%, rgba(0,212,255,.12), transparent 60%),
-                         var(--bg);
-      line-height:1.6; letter-spacing:.2px;
-    }
-    a{color:inherit; text-decoration:none}
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline: none; box-shadow: var(--ring)}
-    .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(120%) blur(10px); background:rgba(11,11,16,.6); border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.8px}
-    .brand .logo{width:34px; height:34px; border-radius:12px; background:conic-gradient(from 200deg, var(--brand1), var(--brand2), var(--accent)); box-shadow:0 8px 30px rgba(0,212,255,.25)}
-    .brand span{font-size:1.05rem}
-    .nav-links{display:flex; gap:18px}
-    .nav-links a{opacity:.9}
-    .nav-links a:hover{opacity:1; text-decoration:underline}
-    .menu-btn{display:none; border:1px solid rgba(255,255,255,.12); background:transparent; color:var(--ink); padding:8px 10px; border-radius:10px}
-    @media (max-width: 760px){.nav-links{display:none}.menu-btn{display:inline-flex}}
-    .hero{padding:80px 0 40px}
-    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center}
-    @media (max-width: 960px){.hero-grid{grid-template-columns:1fr;}}
-    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:.83rem; color:var(--muted)}
-    .title{font-size:clamp(2rem, 4vw, 3rem); line-height:1.15; margin:12px 0 8px; font-weight:900}
-    .subtitle{color:var(--muted); font-size:1.05rem}
-    .cta-row{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(135deg, rgba(138,92,255,.18), rgba(0,212,255,.08)); color:var(--ink); font-weight:600; box-shadow:0 6px 18px rgba(0,0,0,.25)}
-    .btn.secondary{background:transparent}
-    .card{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:22px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .cover{aspect-ratio:1/1; border-radius:16px; background:linear-gradient(160deg, rgba(255,77,141,.3), rgba(138,92,255,.25) 40%, rgba(0,212,255,.3)); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.2rem; text-transform:uppercase; letter-spacing:1px}
-    section{padding:48px 0}
-    h2{font-size:1.6rem; margin:0 0 16px}
-    .grid{display:grid; gap:18px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    @media (max-width: 900px){.grid.cols-3{grid-template-columns:1fr}}
-    .muted{color:var(--muted)}
-    .pill{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04)}
-    .links{display:flex; gap:10px; flex-wrap:wrap}
-    .link{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:14px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08)}
-    .link:hover{box-shadow:0 6px 20px rgba(0,0,0,.25)}
-    .embed{overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,.1)}
-    form{display:grid; gap:12px}
-    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:#0e0e14; color:var(--ink); outline:none}
-    input:focus, textarea:focus{box-shadow:var(--ring)}
-    .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    @media (max-width: 700px){.row{grid-template-columns:1fr}}
-    footer{padding:30px 0; border-top:1px solid rgba(255,255,255,.08); color:var(--muted)}
-    .tiny{font-size:.85rem}
-    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-  </style>
-  <!-- Structured data to help search engines understand your artist site -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    "name": "DROOL VS",
-    "genre": ["Emo rap","Alt hip-hop","Dark pop"],
-    "url": "https://example.com/",
-    "sameAs": [
-      "https://www.instagram.com/droolvs/",
-      "https://www.youtube.com/@PLANITDROOL",
-      "https://www.facebook.com/planitdrool",
-      "https://soundcloud.com/planitdrool"
-    ]
-  }
-  </script>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Go to top">
-        <span class="logo" aria-hidden="true"></span>
-        <span>DROOL VS</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a class="navlink" href="#music">Music</a>
-        <a class="navlink" href="#shows">Shows</a>
-        <a class="navlink" href="#contact">Contact</a>
-        <a class="navlink" href="#links">Links</a>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
-    </div>
-  </header>
-  <div id="mobileMenu" hidden style="border-bottom:1px solid rgba(255,255,255,.08); background:rgba(11,11,16,.9);">
-    <div class="container" style="padding:10px 0 14px; display:grid; gap:8px">
-      <a class="navlink" href="#music">Music</a>
-      <a class="navlink" href="#shows">Shows</a>
-      <a class="navlink" href="#contact">Contact</a>
-      <a class="navlink" href="#links">Links</a>
-    </div>
-  </div>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn?.addEventListener('click', () =>{
+    const open = menu.hasAttribute('hidden');
+    if(open){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+    else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  <main id="home" class="container hero">
-    <div class="hero-grid">
-      <div>
-        <span class="tag">New single out now</span>
-        <h1 class="title">Dark pop hooks. Hip‑hop energy. Baton Rouge grit.</h1>
-        <p class="subtitle">I make songs that feel like 3AM confessions and freeway chases. Tap in below to listen, follow, and book.</p>
-        <div class="cta-row">
-          <a class="btn" href="#music">Listen now</a>
-          <a class="btn secondary" href="#contact">Book / Contact</a>
-        </div>
-        <div style="margin-top:20px" class="links">
-          <a class="link" href="https://www.youtube.com/@PLANITDROOL" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener noreferrer">Facebook</a>
-        </div>
-      </div>
-      <div class="card cover" aria-label="Cover art placeholder">
-        <span>Cover Art<br><small style="font-weight:600; letter-spacing:.2px">Drag an image here later</small></span>
-      </div>
-    </div>
-  </main>
-
-  <section id="music" aria-labelledby="music-heading">
-    <div class="container">
-      <h2 id="music-heading">Music</h2>
-      <p class="muted tiny">Swap these embeds for your official Spotify/Apple once your distributor pages are live.</p>
-      <div class="grid cols-3" style="margin-top:14px">
-        <div class="card">
-          <div class="pill">Latest Release</div>
-          <div class="embed" style="margin-top:10px">
-            <iframe loading="lazy" width="100%" height="240" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Latest release on YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="card">
-          <div class="pill">Visualizer</div>
-          <div class="embed" style="margin-top:10px">
-            <iframe loading="lazy" width="100%" height="240" src="https://www.youtube.com/embed/5qap5aO4i9A" title="Visualizer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="card">
-          <div class="pill">SoundCloud</div>
-          <div class="embed" style="margin-top:10px">
-            <iframe loading="lazy" width="100%" height="240" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/planitdrool&color=%2300d4ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true" title="SoundCloud Player"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="shows" aria-labelledby="shows-heading">
-    <div class="container">
-      <h2 id="shows-heading">Upcoming Shows</h2>
-      <div class="grid">
-        <div class="card" style="display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap">
-          <div>
-            <div style="font-weight:700">Open Mic — Los Angeles</div>
-            <div class="muted tiny">TBA • 8:00 PM • 18+ • Free</div>
-          </div>
-          <a class="btn" href="#contact">RSVP</a>
-        </div>
-        <div class="card" style="display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap">
-          <div>
-            <div style="font-weight:700">Pop‑Up Set — TBD</div>
-            <div class="muted tiny">TBA • 9:30 PM • 18+ • $10</div>
-          </div>
-          <a class="btn" href="#contact">RSVP</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="links" aria-labelledby="links-heading">
-    <div class="container">
-      <h2 id="links-heading">Follow & Stream</h2>
-      <p class="muted tiny">Use this as a mini link‑in‑bio. Add/remove platforms anytime.</p>
-      <div class="links" style="margin-top:10px">
-        <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="link" href="https://www.youtube.com/@PLANITDROOL" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a class="link" href="#" target="_blank" rel="noopener noreferrer">Spotify (soon)</a>
-        <a class="link" href="#" target="_blank" rel="noopener noreferrer">Apple Music (soon)</a>
-        <a class="link" href="https://soundcloud.com/planitdrool" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" aria-labelledby="contact-heading">
-    <div class="container">
-      <h2 id="contact-heading">Booking / Contact</h2>
-      <div class="grid" style="grid-template-columns:1.1fr .9fr">
-        <form class="card" id="contactForm" action="https://formspree.io/f/xdklabjj" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New message from DROOL VS site" />
-          <!-- Honeypot to reduce spam -->
-          <label class="tiny" style="position:absolute;left:-9999px;opacity:0" for="website">Website</label>
-          <input id="website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" />
-          <div class="row">
-            <div>
-              <label class="tiny" for="first">First name</label>
-              <input id="first" name="first" required placeholder="Jane" />
-            </div>
-            <div>
-              <label class="tiny" for="last">Last name</label>
-              <input id="last" name="last" required placeholder="Doe" />
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label class="tiny" for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="jane@example.com" />
-            </div>
-            <div>
-              <label class="tiny" for="subject">Subject</label>
-              <input id="subject" name="subject" placeholder="Booking / Collab / Press" />
-            </div>
-          </div>
-          <div>
-            <label class="tiny" for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about the show, dates, budget, or idea…"></textarea>
-          </div>
-          <button class="btn" type="submit" id="sendBtn">Send</button>
-          <input type="hidden" name="form_name" value="droolvs_site_contact" />
-          <p id="formNote" class="tiny" style="margin-top:8px;color:var(--muted)" aria-live="polite"></p>
-          <p class="tiny muted">By submitting, you agree to be contacted back at the provided email.</p>
-        </form>
-        <div class="card">
-          <div class="pill" style="margin-bottom:12px">Info</div>
-          <p class="muted">Serious inquiries only. For features, beats, and show bookings in LA (and beyond), drop details and socials. I usually respond within 24–48 hours.</p>
-          <ul class="muted">
-            <li>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></li>
-            <li>Based in: Los Angeles, CA</li>
-            <li>Genres: Emo‑rap, alt‑hip‑hop, dark pop</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
-      <div class="muted tiny">© <span id="year"></span> DROOL VS · All Rights Reserved</div>
-      <div class="muted tiny">Built with ♥ by you.</div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile menu toggle + close on link click
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    const links = document.querySelectorAll('.navlink');
-    btn?.addEventListener('click', () =>{
-      const open = menu.hasAttribute('hidden');
-      if(open){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
-      else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
-    });
-    links.forEach(a=>a.addEventListener('click',()=>{
-      menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false');
-    }));
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Formspree AJAX submit for inline success/error
-    (function(){
-      const form = document.getElementById('contactForm');
-      const note = document.getElementById('formNote');
-      const btn  = document.getElementById('sendBtn');
-      if(!form) return;
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        if(document.getElementById('website')?.value){ return; }
-        btn.disabled = true; btn.textContent = 'Sending…'; note.textContent = '';
-        const data = Object.fromEntries(new FormData(form).entries());
-        try{
-          const res = await fetch(form.action, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          });
-          if(res.ok){
-            form.reset();
-            note.style.color = '#88f0a1';
-            note.textContent = 'Thanks! Your message was sent.';
-          } else {
-            note.style.color = '#ff9aa2';
-            note.textContent = 'Hmm, something went wrong. Try again or email me directly.';
-          }
-        }catch(err){
+  (function(){
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
+    const btn  = document.getElementById('sendBtn');
+    if(!form) return;
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      if(document.getElementById('website')?.value){ return; }
+      btn.disabled = true; btn.textContent = 'Sending…'; note.textContent = '';
+      const data = Object.fromEntries(new FormData(form).entries());
+      try{
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if(res.ok){
+          form.reset();
+          note.style.color = '#88f0a1';
+          note.textContent = 'Thanks! Your message was sent.';
+        } else {
           note.style.color = '#ff9aa2';
-          note.textContent = 'Network error. Please try again.';
-        } finally{
-          btn.disabled = false; btn.textContent = 'Send';
+          note.textContent = 'Something went wrong. Try again or email me directly.';
         }
-      });
-    })();
-  </script>
-  <noscript><div class="container tiny muted" style="padding:12px 0 28px">JavaScript is disabled; the contact form will submit with a page reload.</div></noscript>
-</body>
-</html>
+      }catch(err){
+        note.style.color = '#ff9aa2';
+        note.textContent = 'Network error. Please try again.';
+      } finally{
+        btn.disabled = false; btn.textContent = 'Send';
+      }
+    });
+  })();
+</script>
 
