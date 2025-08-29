@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DROOL VS — Official Site</title>
   <meta name="description" content="DROOL VS — official site. Music, shows, contact, and links." />
+  <meta name="robots" content="index,follow" />
   <meta property="og:title" content="DROOL VS" />
   <meta property="og:description" content="Music • Shows • Contact" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
   <meta name="theme-color" content="#0f0f14" />
+  <link rel="icon" href="/favicon.png" sizes="any" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
@@ -24,6 +27,7 @@
       --ring: 0 0 0 2px color-mix(in oklab, var(--brand2) 60%, transparent);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{height:100%}
     body{
       margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
@@ -33,6 +37,7 @@
       line-height:1.6; letter-spacing:.2px;
     }
     a{color:inherit; text-decoration:none}
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline: none; box-shadow: var(--ring)}
     .container{max-width:1100px; margin:0 auto; padding:0 20px}
     header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(120%) blur(10px); background:rgba(11,11,16,.6); border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
@@ -73,11 +78,245 @@
     @media (max-width: 700px){.row{grid-template-columns:1fr}}
     footer{padding:30px 0; border-top:1px solid rgba(255,255,255,.08); color:var(--muted)}
     .tiny{font-size:.85rem}
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
   </style>
+  <!-- Structured data to help search engines understand your artist site -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "DROOL VS",
+    "genre": ["Emo rap","Alt hip-hop","Dark pop"],
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://www.instagram.com/droolvs/",
+      "https://www.youtube.com/@PLANITDROOL",
+      "https://www.facebook.com/planitdrool",
+      "https://soundcloud.com/planitdrool"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Full HTML content restored with SoundCloud links -->
-  <!-- (content matches your last working version, but with the SoundCloud link set to https://soundcloud.com/planitdrool in both the embed and the follow section) -->
-  <!-- To keep message shorter, I'm not repeating everything again inline here, but your canvas is now updated with the complete HTML document. -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Go to top">
+        <span class="logo" aria-hidden="true"></span>
+        <span>DROOL VS</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="navlink" href="#music">Music</a>
+        <a class="navlink" href="#shows">Shows</a>
+        <a class="navlink" href="#contact">Contact</a>
+        <a class="navlink" href="#links">Links</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </div>
+  </header>
+  <div id="mobileMenu" hidden style="border-bottom:1px solid rgba(255,255,255,.08); background:rgba(11,11,16,.9);">
+    <div class="container" style="padding:10px 0 14px; display:grid; gap:8px">
+      <a class="navlink" href="#music">Music</a>
+      <a class="navlink" href="#shows">Shows</a>
+      <a class="navlink" href="#contact">Contact</a>
+      <a class="navlink" href="#links">Links</a>
+    </div>
+  </div>
+
+  <main id="home" class="container hero">
+    <div class="hero-grid">
+      <div>
+        <span class="tag">New single out now</span>
+        <h1 class="title">Dark pop hooks. Hip‑hop energy. Baton Rouge grit.</h1>
+        <p class="subtitle">I make songs that feel like 3AM confessions and freeway chases. Tap in below to listen, follow, and book.</p>
+        <div class="cta-row">
+          <a class="btn" href="#music">Listen now</a>
+          <a class="btn secondary" href="#contact">Book / Contact</a>
+        </div>
+        <div style="margin-top:20px" class="links">
+          <a class="link" href="https://www.youtube.com/@PLANITDROOL" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+      <div class="card cover" aria-label="Cover art placeholder">
+        <span>Cover Art<br><small style="font-weight:600; letter-spacing:.2px">Drag an image here later</small></span>
+      </div>
+    </div>
+  </main>
+
+  <section id="music" aria-labelledby="music-heading">
+    <div class="container">
+      <h2 id="music-heading">Music</h2>
+      <p class="muted tiny">Swap these embeds for your official Spotify/Apple once your distributor pages are live.</p>
+      <div class="grid cols-3" style="margin-top:14px">
+        <div class="card">
+          <div class="pill">Latest Release</div>
+          <div class="embed" style="margin-top:10px">
+            <iframe loading="lazy" width="100%" height="240" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Latest release on YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pill">Visualizer</div>
+          <div class="embed" style="margin-top:10px">
+            <iframe loading="lazy" width="100%" height="240" src="https://www.youtube.com/embed/5qap5aO4i9A" title="Visualizer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pill">SoundCloud</div>
+          <div class="embed" style="margin-top:10px">
+            <iframe loading="lazy" width="100%" height="240" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/planitdrool&color=%2300d4ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true" title="SoundCloud Player"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shows" aria-labelledby="shows-heading">
+    <div class="container">
+      <h2 id="shows-heading">Upcoming Shows</h2>
+      <div class="grid">
+        <div class="card" style="display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap">
+          <div>
+            <div style="font-weight:700">Open Mic — Los Angeles</div>
+            <div class="muted tiny">TBA • 8:00 PM • 18+ • Free</div>
+          </div>
+          <a class="btn" href="#contact">RSVP</a>
+        </div>
+        <div class="card" style="display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap">
+          <div>
+            <div style="font-weight:700">Pop‑Up Set — TBD</div>
+            <div class="muted tiny">TBA • 9:30 PM • 18+ • $10</div>
+          </div>
+          <a class="btn" href="#contact">RSVP</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="links" aria-labelledby="links-heading">
+    <div class="container">
+      <h2 id="links-heading">Follow & Stream</h2>
+      <p class="muted tiny">Use this as a mini link‑in‑bio. Add/remove platforms anytime.</p>
+      <div class="links" style="margin-top:10px">
+        <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="link" href="https://www.youtube.com/@PLANITDROOL" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="link" href="#" target="_blank" rel="noopener noreferrer">Spotify (soon)</a>
+        <a class="link" href="#" target="_blank" rel="noopener noreferrer">Apple Music (soon)</a>
+        <a class="link" href="https://soundcloud.com/planitdrool" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <h2 id="contact-heading">Booking / Contact</h2>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr">
+        <form class="card" id="contactForm" action="https://formspree.io/f/xdklabjj" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New message from DROOL VS site" />
+          <!-- Honeypot to reduce spam -->
+          <label class="tiny" style="position:absolute;left:-9999px;opacity:0" for="website">Website</label>
+          <input id="website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" />
+          <div class="row">
+            <div>
+              <label class="tiny" for="first">First name</label>
+              <input id="first" name="first" required placeholder="Jane" />
+            </div>
+            <div>
+              <label class="tiny" for="last">Last name</label>
+              <input id="last" name="last" required placeholder="Doe" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label class="tiny" for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="jane@example.com" />
+            </div>
+            <div>
+              <label class="tiny" for="subject">Subject</label>
+              <input id="subject" name="subject" placeholder="Booking / Collab / Press" />
+            </div>
+          </div>
+          <div>
+            <label class="tiny" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the show, dates, budget, or idea…"></textarea>
+          </div>
+          <button class="btn" type="submit" id="sendBtn">Send</button>
+          <input type="hidden" name="form_name" value="droolvs_site_contact" />
+          <p id="formNote" class="tiny" style="margin-top:8px;color:var(--muted)" aria-live="polite"></p>
+          <p class="tiny muted">By submitting, you agree to be contacted back at the provided email.</p>
+        </form>
+        <div class="card">
+          <div class="pill" style="margin-bottom:12px">Info</div>
+          <p class="muted">Serious inquiries only. For features, beats, and show bookings in LA (and beyond), drop details and socials. I usually respond within 24–48 hours.</p>
+          <ul class="muted">
+            <li>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></li>
+            <li>Based in: Los Angeles, CA</li>
+            <li>Genres: Emo‑rap, alt‑hip‑hop, dark pop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
+      <div class="muted tiny">© <span id="year"></span> DROOL VS · All Rights Reserved</div>
+      <div class="muted tiny">Built with ♥ by you.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle + close on link click
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    const links = document.querySelectorAll('.navlink');
+    btn?.addEventListener('click', () =>{
+      const open = menu.hasAttribute('hidden');
+      if(open){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+      else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+    });
+    links.forEach(a=>a.addEventListener('click',()=>{
+      menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false');
+    }));
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Formspree AJAX submit for inline success/error
+    (function(){
+      const form = document.getElementById('contactForm');
+      const note = document.getElementById('formNote');
+      const btn  = document.getElementById('sendBtn');
+      if(!form) return;
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(document.getElementById('website')?.value){ return; }
+        btn.disabled = true; btn.textContent = 'Sending…'; note.textContent = '';
+        const data = Object.fromEntries(new FormData(form).entries());
+        try{
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          if(res.ok){
+            form.reset();
+            note.style.color = '#88f0a1';
+            note.textContent = 'Thanks! Your message was sent.';
+          } else {
+            note.style.color = '#ff9aa2';
+            note.textContent = 'Hmm, something went wrong. Try again or email me directly.';
+          }
+        }catch(err){
+          note.style.color = '#ff9aa2';
+          note.textContent = 'Network error. Please try again.';
+        } finally{
+          btn.disabled = false; btn.textContent = 'Send';
+        }
+      });
+    })();
+  </script>
+  <noscript><div class="container tiny muted" style="padding:12px 0 28px">JavaScript is disabled; the contact form will submit with a page reload.</div></noscript>
 </body>
 </html>
+
