@@ -253,4 +253,55 @@
 
   <footer>
     <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
-      <div class="muted
+      <div class="muted tiny">© <span id="year"></span> DROOL VS · All Rights Reserved</div>
+      <div class="muted tiny">Built with ♥ by you.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () =>{
+      const open = menu.hasAttribute('hidden');
+      if(open){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+      else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Formspree async submit with inline feedback
+    (function(){
+      const form = document.getElementById('contactForm');
+      const note = document.getElementById('formNote');
+      const sendBtn = document.getElementById('sendBtn');
+      if(!form) return;
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(document.getElementById('website')?.value){ return; } // honeypot
+        sendBtn.disabled = true; sendBtn.textContent = 'Sending…'; note.textContent = '';
+        const data = Object.fromEntries(new FormData(form).entries());
+        try{
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          if(res.ok){
+            form.reset();
+            note.style.color = '#88f0a1';
+            note.textContent = 'Thanks! Your message was sent.';
+          } else {
+            note.style.color = '#ff9aa2';
+            note.textContent = 'Something went wrong. Try again or email me directly.';
+          }
+        }catch(err){
+          note.style.color = '#ff9aa2';
+          note.textContent = 'Network error. Please try again.';
+        } finally{
+          sendBtn.disabled = false; sendBtn.textContent = 'Send';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
