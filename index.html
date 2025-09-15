@@ -4,24 +4,40 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DROOL VS — Official Site | Music, Links, Merch & Booking</title>
+
+  <!-- Canonical + basic SEO -->
+  <link rel="canonical" href="https://planitdrool.com/" />
   <meta name="description" content="Dark pop hooks, hip-hop energy, Baton Rouge grit. Official site of DROOL VS — music, shows, merch, links & booking." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://planitdrool.com/" />
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="DROOL VS — Official Site" />
   <meta property="og:description" content="Music • Merch • Shows • Links • Booking" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:url" content="https://planitdrool.com/" />
+  <meta property="og:image" content="https://planitdrool.com/assets/og-image.png" />
   <meta property="og:site_name" content="DROOL VS" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DROOL VS — Official Site" />
+  <meta name="twitter:description" content="Music • Merch • Shows • Links • Booking" />
+  <meta name="twitter:image" content="https://planitdrool.com/assets/og-image.png" />
+
+  <!-- Theme + Icon -->
   <meta name="theme-color" content="#000000" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#000; --panel:#131313; --ink:#f7f7fb; --muted:#b4b5c2;
-      --brand1:#d10000; --brand2:#8a0000; --accent:#ff1a1a;
-      --ring:0 0 0 2px rgba(209,0,0,.6)
+       --brand1:#d10000; --brand2:#8a0000; --accent:#ff1a1a;
+       --ring:0 0 0 2px rgba(209,0,0,.6)
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -42,84 +58,4 @@
     .hero{padding:80px 0 40px}
     .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
     @media (max-width:960px){.hero-grid{grid-template-columns:1fr}}
-    .title{font-size:clamp(2rem,4vw,3rem); line-height:1.15; margin:12px 0 8px; font-weight:900; color:var(--accent)}
-    .subtitle{color:var(--muted); font-size:1.05rem}
-    .cta-row{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:none; background:linear-gradient(135deg,var(--brand2),var(--brand1)); color:#fff; font-weight:600; box-shadow:0 0 15px rgba(209,0,0,.5); transition:.2s}
-    .btn:hover{box-shadow:0 0 25px rgba(255,0,0,.7); transform:translateY(-2px)}
-    .card{background:var(--panel); border:1px solid rgba(255,0,0,.25); border-radius:22px; padding:18px; box-shadow:0 0 20px rgba(255,0,0,.15)}
-    .cover img{max-width:100%; border-radius:16px; filter:drop-shadow(0 0 12px rgba(255,0,0,.6))}
-    section{padding:48px 0}
-    h2{font-size:1.6rem; margin:0 0 16px; color:var(--accent)}
-    .grid{display:grid; gap:18px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    @media (max-width:900px){.grid.cols-3{grid-template-columns:1fr}}
-    .muted{color:var(--muted)}
-    .pill{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px; border:1px solid rgba(255,0,0,.4); background:rgba(255,0,0,.05); color:var(--accent)}
-    .links{display:flex; gap:10px; flex-wrap:wrap}
-    .link{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:14px; background:rgba(255,0,0,.1); border:1px solid rgba(255,0,0,.3); color:var(--ink)}
-    .link:hover{box-shadow:0 0 20px rgba(255,0,0,.5)}
-    .merch-grid{display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(240px,1fr))}
-    .merch-item{text-align:center}
-    .merch-item img{max-width:100%; border-radius:14px; margin-bottom:10px; filter:drop-shadow(0 0 10px rgba(255,0,0,.4))}
-    footer{padding:30px 0; border-top:1px solid rgba(255,0,0,.25); color:var(--muted)}
-    .tiny{font-size:.85rem}
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Go to top">
-        <img src="assets/logo.png" alt="DROOL VS smiley face logo" class="logo-img" decoding="async" />
-        <img src="assets/wordmark.png" alt="DROOL VS wordmark" class="wordmark-img" decoding="async" />
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#music">Music</a>
-        <a href="#shows">Shows</a>
-        <a href="#merch">Merch</a>
-        <a href="#contact">Contact</a>
-        <a href="#links">Links</a>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <main id="home" class="container hero">
-    <div class="hero-grid">
-      <div>
-        <h1 class="title">Dark pop hooks. Hip-hop energy. Baton Rouge grit.</h1>
-        <p class="subtitle">I make songs that feel like 3AM confessions and freeway chases. Tap in below to listen, follow, and book.</p>
-        <div class="cta-row">
-          <a class="btn" href="#spotify">Listen on Spotify</a>
-          <a class="btn secondary" href="#contact">Book / Contact</a>
-        </div>
-      </div>
-      <div class="card cover">
-        <img src="assets/logo.png" alt="DROOL VS smiley face logo large" decoding="async" />
-      </div>
-    </div>
-  </main>
-
-  <!-- Merch Section -->
-  <section id="merch">
-    <div class="container">
-      <h2>Merch</h2>
-      <div class="merch-grid">
-        <div class="merch-item card">
-          <img src="assets/hoodie-front.png" alt="DROOL VS hoodie front" />
-          <a class="btn" href="https://www.bonfire.com/store/featuring-drool/" target="_blank">I want one</a>
-        </div>
-        <div class="merch-item card">
-          <img src="assets/hoodie-back.png" alt="DROOL VS hoodie back" />
-          <a class="btn" href="https://www.bonfire.com/store/featuring-drool/" target="_blank">I want one</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Music, Shows, Links, Contact sections remain the same -->
-  <!-- (Keep your existing sections here: Music, Shows, Links, Contact, Footer, Scripts) -->
-
-</body>
-</html>
+    .title{font-size:clamp(2rem,4vw,3rem); line-height:1.15; margin:12px
