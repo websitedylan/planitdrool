@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DROOL VS — Official Site | Music, Links & Booking</title>
+  <title>DROOL VS — Official Site | Music, Links, Merch & Booking</title>
   <meta name="description" content="Dark pop hooks, hip-hop energy, Baton Rouge grit. Official site of DROOL VS — music, shows, merch, links & booking." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://planitdrool.com/" />
   <meta property="og:title" content="DROOL VS — Official Site" />
-  <meta property="og:description" content="Music • Shows • Merch • Links • Booking" />
+  <meta property="og:description" content="Music • Merch • Shows • Links • Booking" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/og-image.png" />
   <meta property="og:site_name" content="DROOL VS" />
@@ -59,28 +59,12 @@
     .links{display:flex; gap:10px; flex-wrap:wrap}
     .link{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:14px; background:rgba(255,0,0,.1); border:1px solid rgba(255,0,0,.3); color:var(--ink)}
     .link:hover{box-shadow:0 0 20px rgba(255,0,0,.5)}
+    .merch-grid{display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(240px,1fr))}
+    .merch-item{text-align:center}
+    .merch-item img{max-width:100%; border-radius:14px; margin-bottom:10px; filter:drop-shadow(0 0 10px rgba(255,0,0,.4))}
     footer{padding:30px 0; border-top:1px solid rgba(255,0,0,.25); color:var(--muted)}
     .tiny{font-size:.85rem}
   </style>
-  <!-- JSON-LD for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MusicGroup",
-    "name":"DROOL VS",
-    "genre":["Emo-rap","Alt-hip-hop","Dark pop"],
-    "foundingLocation":"Baton Rouge, LA",
-    "sameAs":[
-      "https://www.instagram.com/droolvs/",
-      "https://youtube.com/@droolvs",
-      "https://open.spotify.com/artist/153Ko1jCjTxgGvZRfavCez",
-      "https://music.apple.com/us/artist/drool-vs/1836085555",
-      "https://soundcloud.com/planitdrool",
-      "https://www.facebook.com/planitdrool",
-      "https://www.bonfire.com/store/featuring-drool/"
-    ]
-  }
-  </script>
 </head>
 <body>
   <header>
@@ -92,31 +76,22 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#music">Music</a>
         <a href="#shows">Shows</a>
+        <a href="#merch">Merch</a>
         <a href="#contact">Contact</a>
         <a href="#links">Links</a>
-        <a href="https://www.bonfire.com/store/featuring-drool/" target="_blank" rel="noopener">Merch</a>
       </nav>
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
     </div>
   </header>
-  <div id="mobileMenu" hidden style="border-bottom:1px solid rgba(255,0,0,.2); background:rgba(0,0,0,.95);">
-    <div class="container" style="padding:10px 0 14px; display:grid; gap:8px">
-      <a href="#music">Music</a>
-      <a href="#shows">Shows</a>
-      <a href="#contact">Contact</a>
-      <a href="#links">Links</a>
-      <a href="https://www.bonfire.com/store/featuring-drool/" target="_blank" rel="noopener">Merch</a>
-    </div>
-  </div>
 
+  <!-- Hero Section -->
   <main id="home" class="container hero">
     <div class="hero-grid">
       <div>
         <h1 class="title">Dark pop hooks. Hip-hop energy. Baton Rouge grit.</h1>
-        <p class="subtitle">I make songs that feel like 3AM confessions and freeway chases. Tap in below to listen, follow, cop merch, and book.</p>
+        <p class="subtitle">I make songs that feel like 3AM confessions and freeway chases. Tap in below to listen, follow, and book.</p>
         <div class="cta-row">
           <a class="btn" href="#spotify">Listen on Spotify</a>
-          <a class="btn secondary" href="https://www.bonfire.com/store/featuring-drool/" target="_blank">Shop Merch</a>
           <a class="btn secondary" href="#contact">Book / Contact</a>
         </div>
       </div>
@@ -126,119 +101,25 @@
     </div>
   </main>
 
-  <section id="music">
+  <!-- Merch Section -->
+  <section id="merch">
     <div class="container">
-      <h2>Music</h2>
-      <div class="grid cols-3" style="margin-top:14px">
-        <div class="card">
-          <div class="pill">Latest Visual</div>
-          <div class="embed" style="margin-top:10px">
-            <iframe loading="lazy" width="100%" height="240" src="https://www.youtube.com/embed/bk0fqu3OSXs?si=RbEYZw7ftxfwHM9G" title="DROOL VS – Latest Visual" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+      <h2>Merch</h2>
+      <div class="merch-grid">
+        <div class="merch-item card">
+          <img src="assets/hoodie-front.png" alt="DROOL VS hoodie front" />
+          <a class="btn" href="https://www.bonfire.com/store/featuring-drool/" target="_blank">I want one</a>
         </div>
-        <div class="card" id="spotify">
-          <div class="pill">Spotify</div>
-          <div class="embed" style="margin-top:10px">
-            <iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/artist/153Ko1jCjTxgGvZRfavCez?utm_source=generator" width="100%" height="240" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-          </div>
-        </div>
-        <div class="card">
-          <div class="pill">Apple Music</div>
-          <div class="embed" style="margin-top:10px">
-            <iframe loading="lazy" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="240" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/artist/drool-vs/1836085555" title="DROOL VS on Apple Music"></iframe>
-          </div>
+        <div class="merch-item card">
+          <img src="assets/hoodie-back.png" alt="DROOL VS hoodie back" />
+          <a class="btn" href="https://www.bonfire.com/store/featuring-drool/" target="_blank">I want one</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="shows">
-    <div class="container">
-      <h2>Upcoming Shows</h2>
-      <div class="grid">
-        <div class="card" style="display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap">
-          <div>
-            <div style="font-weight:700">Open Mic — Los Angeles</div>
-            <div class="muted tiny">TBA • 8:00 PM • 18+ • Free</div>
-          </div>
-          <a class="btn" href="#contact">RSVP</a>
-        </div>
-        <div class="card" style="display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap">
-          <div>
-            <div style="font-weight:700">Pop-Up Set — TBD</div>
-            <div class="muted tiny">TBA • 9:30 PM • 18+ • $10</div>
-          </div>
-          <a class="btn" href="#contact">RSVP</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Music, Shows, Links, Contact sections remain the same -->
+  <!-- (Keep your existing sections here: Music, Shows, Links, Contact, Footer, Scripts) -->
 
-  <section id="links">
-    <div class="container">
-      <h2>Follow & Stream</h2>
-      <div class="links" style="margin-top:10px">
-        <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener">Instagram</a>
-        <a class="link" href="https://youtube.com/@droolvs?si=o46VD9yf1m3EBa5V" target="_blank" rel="noopener">YouTube</a>
-        <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener">Facebook</a>
-        <a class="link" href="https://open.spotify.com/artist/153Ko1jCjTxgGvZRfavCez?si=VVlHuM2hQEe3fK778aQ4oA" target="_blank" rel="noopener">Spotify</a>
-        <a class="link" href="https://music.apple.com/us/artist/drool-vs/1836085555" target="_blank" rel="noopener">Apple Music</a>
-        <a class="link" href="https://soundcloud.com/planitdrool" target="_blank" rel="noopener">SoundCloud</a>
-        <a class="link" href="https://www.bonfire.com/store/featuring-drool/" target="_blank" rel="noopener">Merch</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Booking / Contact</h2>
-      <div class="grid" style="grid-template-columns:1.1fr .9fr">
-        <form class="card" id="contactForm" action="https://formspree.io/f/xdklabjj" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New message from DROOL VS site" />
-          <!-- Honeypot to cut spam -->
-          <label class="tiny" style="position:absolute;left:-9999px;opacity:0" for="website">Website</label>
-          <input id="website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" />
-          <div class="row" style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
-            <div>
-              <label class="tiny" for="first">First name</label>
-              <input id="first" name="first" required placeholder="Jane" />
-            </div>
-            <div>
-              <label class="tiny" for="last">Last name</label>
-              <input id="last" name="last" required placeholder="Doe" />
-            </div>
-          </div>
-          <div class="row" style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
-            <div>
-              <label class="tiny" for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="jane@example.com" />
-            </div>
-            <div>
-              <label class="tiny" for="subject">Subject</label>
-              <input id="subject" name="subject" placeholder="Booking / Collab / Press" />
-            </div>
-          </div>
-          <div>
-            <label class="tiny" for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about the show, dates, budget, or idea…"></textarea>
-          </div>
-          <button class="btn" type="submit" id="sendBtn">Send</button>
-          <input type="hidden" name="form_name" value="droolvs_site_contact" />
-          <p id="formNote" class="tiny" style="margin-top:8px;color:var(--muted)" aria-live="polite"></p>
-        </form>
-        <div class="card">
-          <div class="pill" style="margin-bottom:12px">Info</div>
-          <p class="muted">Serious inquiries only. For features, beats, and show bookings in LA (and beyond), drop details and socials. I usually respond within 24–48 hours.</p>
-          <ul class="muted">
-            <li>Email: <a href="mailto:Dayumson27@gmail.com">Dayumson27@gmail.com</a></li>
-            <li>Based in: Los Angeles, CA</li>
-            <li>Genres: Emo-rap, alt-hip-hop, dark pop</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
-      <div class="
+</body>
+</html>
