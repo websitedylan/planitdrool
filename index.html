@@ -3,14 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DROOL VS — Official Site | Music, Links, Merch & Booking</title>
 
-  <!-- Canonical + basic SEO -->
+  <title>DROOL VS — Official Site | Music, Merch, Links & Booking</title>
+  <meta name="description" content="Official site of DROOL VS. Dark-pop hooks, hip-hop energy, Baton Rouge grit. Stream music, shop merch, see shows, and book inquiries." />
   <link rel="canonical" href="https://planitdrool.com/" />
-  <meta name="description" content="Dark pop hooks, hip-hop energy, Baton Rouge grit. Official site of DROOL VS — music, shows, merch, links & booking." />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:title" content="DROOL VS — Official Site" />
   <meta property="og:description" content="Music • Merch • Shows • Links • Booking" />
   <meta property="og:type" content="website" />
@@ -28,7 +27,7 @@
   <meta name="theme-color" content="#000000" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
 
-  <!-- Fonts -->
+  <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
@@ -36,8 +35,8 @@
   <style>
     :root{
       --bg:#000; --panel:#131313; --ink:#f7f7fb; --muted:#b4b5c2;
-       --brand1:#d10000; --brand2:#8a0000; --accent:#ff1a1a;
-       --ring:0 0 0 2px rgba(209,0,0,.6)
+      --brand1:#d10000; --brand2:#8a0000; --accent:#ff1a1a;
+      --ring:0 0 0 2px rgba(209,0,0,.6)
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -82,7 +81,7 @@
     .tiny{font-size:.85rem}
   </style>
 
-  <!-- JSON-LD for SEO -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -93,6 +92,7 @@
     "image":"https://planitdrool.com/assets/wordmark.png",
     "genre":["Emo-rap","Alt-hip-hop","Dark pop"],
     "foundingLocation":"Baton Rouge, LA",
+    "email":"mailto:Dayumson27@gmail.com",
     "sameAs":[
       "https://www.instagram.com/droolvs/",
       "https://youtube.com/@droolvs",
@@ -109,7 +109,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Go to top">
-        <img src="assets/logo.png" alt="DROOL VS smiley face logo" class="logo-img" decoding="async" />
+        <img src="assets/logo.png" alt="DROOL VS dripping smiley logo" class="logo-img" decoding="async" />
         <img src="assets/wordmark.png" alt="DROOL VS wordmark" class="wordmark-img" decoding="async" />
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -137,14 +137,15 @@
     <div class="hero-grid">
       <div>
         <h1 class="title">Dark pop hooks. Hip-hop energy. Baton Rouge grit.</h1>
-        <p class="subtitle">I make songs that feel like 3AM confessions and freeway chases. Tap in below to listen, follow, and book.</p>
+        <p class="subtitle">Songs that feel like 3AM confessions and freeway chases. Tap in to listen, shop, and book.</p>
         <div class="cta-row">
-          <a class="btn" href="#spotify">Listen on Spotify</a>
-          <a class="btn secondary" href="#contact">Book / Contact</a>
+          <a class="btn" href="#spotify" aria-label="Listen on Spotify">Listen on Spotify</a>
+          <a class="btn" href="https://www.bonfire.com/store/featuring-drool/" target="_blank" rel="noopener" aria-label="Shop DROOL VS merch">Shop Merch</a>
+          <a class="btn" href="#contact" aria-label="Booking and contact form">Book / Contact</a>
         </div>
       </div>
       <div class="card cover">
-        <img src="assets/logo.png" alt="DROOL VS smiley face logo large" decoding="async" />
+        <img src="assets/logo.png" alt="DROOL VS logo large" decoding="async" loading="eager" />
       </div>
     </div>
   </main>
@@ -157,13 +158,13 @@
         <div class="card">
           <div class="pill">Latest Visual</div>
           <div class="embed" style="margin-top:10px">
-            <iframe loading="lazy" width="100%" height="240" src="https://www.youtube.com/embed/bk0fqu3OSXs?si=RbEYZw7ftxfwHM9G" title="DROOL VS – Latest Visual" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe loading="lazy" width="100%" height="240" src="https://www.youtube.com/embed/bk0fqu3OSXs?si=RbEYZw7ftxfwHM9G" title="DROOL VS — latest visual on YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
         <div class="card" id="spotify">
           <div class="pill">Spotify</div>
           <div class="embed" style="margin-top:10px">
-            <iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/artist/153Ko1jCjTxgGvZRfavCez?utm_source=generator" width="100%" height="240" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            <iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/artist/153Ko1jCjTxgGvZRfavCez?utm_source=generator" width="100%" height="240" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="DROOL VS on Spotify"></iframe>
           </div>
         </div>
         <div class="card">
@@ -176,17 +177,17 @@
     </div>
   </section>
 
-  <!-- MERCH (new) -->
+  <!-- MERCH -->
   <section id="merch">
     <div class="container">
       <h2>Merch</h2>
       <div class="merch-grid">
         <div class="merch-item card">
-          <img src="assets/hoodie-front.png" alt="DROOL VS hoodie front" />
+          <img src="assets/hoodie-front.png" alt="DROOL VS hoodie with dripping smiley on front" loading="lazy" />
           <a class="btn" href="https://www.bonfire.com/store/featuring-drool/" target="_blank" rel="noopener">I want one</a>
         </div>
         <div class="merch-item card">
-          <img src="assets/hoodie-back.png" alt="DROOL VS hoodie back" />
+          <img src="assets/hoodie-back.png" alt="DROOL VS hoodie back with wordmark" loading="lazy" />
           <a class="btn" href="https://www.bonfire.com/store/featuring-drool/" target="_blank" rel="noopener">I want one</a>
         </div>
       </div>
@@ -221,13 +222,13 @@
     <div class="container">
       <h2>Follow & Stream</h2>
       <div class="links" style="margin-top:10px">
-        <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener">Instagram</a>
-        <a class="link" href="https://youtube.com/@droolvs?si=o46VD9yf1m3EBa5V" target="_blank" rel="noopener">YouTube</a>
-        <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener">Facebook</a>
-        <a class="link" href="https://open.spotify.com/artist/153Ko1jCjTxgGvZRfavCez?si=VVlHuM2hQEe3fK778aQ4oA" target="_blank" rel="noopener">Spotify</a>
-        <a class="link" href="https://music.apple.com/us/artist/drool-vs/1836085555" target="_blank" rel="noopener">Apple Music</a>
-        <a class="link" href="https://soundcloud.com/planitdrool" target="_blank" rel="noopener">SoundCloud</a>
-        <a class="link" href="https://www.bonfire.com/store/featuring-drool/" target="_blank" rel="noopener">Merch</a>
+        <a class="link" href="https://www.instagram.com/droolvs/" target="_blank" rel="noopener" title="Instagram">Instagram</a>
+        <a class="link" href="https://youtube.com/@droolvs?si=o46VD9yf1m3EBa5V" target="_blank" rel="noopener" title="YouTube">YouTube</a>
+        <a class="link" href="https://www.facebook.com/planitdrool" target="_blank" rel="noopener" title="Facebook">Facebook</a>
+        <a class="link" href="https://open.spotify.com/artist/153Ko1jCjTxgGvZRfavCez?si=VVlHuM2hQEe3fK778aQ4oA" target="_blank" rel="noopener" title="Spotify">Spotify</a>
+        <a class="link" href="https://music.apple.com/us/artist/drool-vs/1836085555" target="_blank" rel="noopener" title="Apple Music">Apple Music</a>
+        <a class="link" href="https://soundcloud.com/planitdrool" target="_blank" rel="noopener" title="SoundCloud">SoundCloud</a>
+        <a class="link" href="https://www.bonfire.com/store/featuring-drool/" target="_blank" rel="noopener" title="Merch Store">Merch</a>
       </div>
     </div>
   </section>
@@ -239,7 +240,7 @@
       <div class="grid" style="grid-template-columns:1.1fr .9fr">
         <form class="card" id="contactForm" action="https://formspree.io/f/xdklabjj" method="POST" novalidate>
           <input type="hidden" name="_subject" value="New message from DROOL VS site" />
-          <!-- Honeypot to cut spam -->
+          <!-- Honeypot for spam -->
           <label class="tiny" style="position:absolute;left:-9999px;opacity:0" for="website">Website</label>
           <input id="website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" />
           <div class="row" style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
@@ -291,7 +292,7 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
+    // Mobile menu
     const btn = document.getElementById('menuBtn');
     const menu = document.getElementById('mobileMenu');
     btn?.addEventListener('click', () =>{
@@ -300,7 +301,7 @@
       else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
     });
 
-    // Year in footer
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Formspree async submit with inline feedback
@@ -337,5 +338,15 @@
       });
     })();
   </script>
+
+  <!-- Optional: Google Analytics (replace G-XXXX with your GA4 ID)
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
 </body>
 </html>
