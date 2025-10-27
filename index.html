@@ -1,397 +1,47 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PLANIT DROOL | Official Site</title>
-  <meta name="description" content="PLANIT DROOL (aka DROOL VS) — official site. New music, shows, merch, and contact. Voices Unheard Of. Signed to Broken Records Ent. (owner/founder)." />
-  <link rel="canonical" href="https://planitdrool.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="PLANIT DROOL | Official Site" />
-  <meta property="og:description" content="New music, shows, merch, and contact. Voices Unheard Of. Signed to Broken Records Ent. (owner/founder)." />
-  <meta property="og:url" content="https://planitdrool.com/" />
-  <meta property="og:image" content="/assets/og-cover.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="PLANIT DROOL | Official Site" />
-  <meta name="twitter:description" content="New music, shows, merch, and contact." />
-  <meta name="twitter:image" content="/assets/og-cover.jpg" />
-
-  <!-- Tailwind (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { display: ['ui-sans-serif','system-ui','Avenir','Helvetica Neue','Arial'] },
-          colors: {
-            brand: { 50:'#f5f6ff',100:'#e7e9ff',200:'#c7caff',300:'#9ea5ff',400:'#7f86ff',500:'#6266ff',600:'#4a4fe0',700:'#3a3db3',800:'#2f328c',900:'#1f225a' }
-          }
-        }
-      },
-      darkMode: 'class'
-    }
-  </script>
-
-  <link rel="icon" href="/assets/favicon.ico" />
-
-  <!-- JSON-LD: Artist + Label -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    "name": "PLANIT DROOL",
-    "alternateName": "DROOL VS",
-    "url": "https://planitdrool.com/",
-    "genre": ["Alternative Hip Hop","Emo Trap","Rap/Rock"],
-    "slogan": "Voices Unheard Of",
-    "foundingLocation": "Los Angeles, CA, USA",
-    "memberOf": {
-      "@type": "Organization",
-      "name": "Broken Records Ent.",
-      "url": "https://planitdrool.com/"
-    },
-    "sameAs": [
-      "https://instagram.com/droolvs",
-      "https://tiktok.com/@droolvs",
-      "https://youtube.com/@planitdrool",
-      "https://open.spotify.com/artist/",
-      "https://planitdrool.com/"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Broken Records Ent.",
-    "url": "https://planitdrool.com/",
-    "brand": {"@type":"Brand","name":"Voices Unheard Of"},
-    "founder": {"@type":"Person","name":"Dylan Land"}
-  }
-  </script>
-
-  <style>
-    .reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
-    .reveal.revealed{opacity:1;transform:none}
-    /* Lightbox: prevent layout shift when open */
-    .no-scroll{overflow:hidden}
-  </style>
-</head>
-<body class="bg-black text-white selection:bg-brand-400/60 selection:text-white">
-  <!-- Announcement / Promo bar -->
-  <div class="sticky top-0 z-50">
-    <div class="bg-brand-600/30 border-b border-white/10 text-xs sm:text-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-3">
-        <div class="truncate">🔥 <strong>Saturday Open Mic</strong> — every week, Woodland Hills. Host: PLANIT DROOL. <a href="#flyer" class="underline">See flyer</a></div>
-        <a href="#subscribe" class="hidden sm:inline-block px-2 py-1 rounded-lg bg-white text-black hover:bg-brand-300">RSVP</a>
-      </div>
-    </div>
-    <!-- Top nav -->
-    <header class="backdrop-blur supports-[backdrop-filter]:bg-black/50 border-b border-white/10">
-      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center h-16 justify-between">
-        <a href="#home" class="flex items-center gap-3">
-          <!-- Logo (square) -->
-          <img src="/assets/logo.svg" alt="PLANIT DROOL logo" class="h-8 w-8 sm:h-10 sm:w-10" />
-          <!-- DROOL VS wordmark (same visual weight as logo) -->
-          <img src="/assets/wordmark-droolvs.svg" alt="DROOL VS" class="h-6 sm:h-8" />
-        </a>
-        <div class="hidden md:flex items-center gap-6 text-sm">
-          <a class="hover:text-brand-300" href="#music">Music</a>
-          <a class="hover:text-brand-300" href="#shows">Shows</a>
-          <a class="hover:text-brand-300" href="#merch">Merch</a>
-          <a class="hover:text-brand-300" href="#gallery">Fan Gallery</a>
-          <a class="hover:text-brand-300" href="#contact">Contact</a>
-          <a class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-black hover:bg-brand-300 hover:text-black transition" href="#subscribe">
-            <span>Join the list</span>
-          </a>
-        </div>
-      </nav>
-    </header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>DROOL VS — Official Site</title><link rel="stylesheet" href="style.css"/>
+</head><body>
+<header class="nav">
+  <img src="assets/logo.svg" class="logo" alt="logo"/>
+  <img src="assets/wordmark-droolvs.svg" class="wordmark" alt="DROOL VS"/>
+  <nav><a href="#music">Music</a><a href="#shows">Shows</a><a href="#merch">Merch</a><a href="#contact">Contact</a></nav>
+</header>
+<section class="hero">
+  <h1>Dark pop hooks. Hip-hop energy. Baton Rouge grit.</h1>
+  <p>Signed to <strong>Broken Records Ent.</strong> — owner & founder. PHONEHEADZ dropping Black Friday.</p>
+  <div class="cta"><a href="#music" class="btn">Watch “Oh Shit”</a><a href="#merch" class="btn">Shop Merch</a><a href="#contact" class="btn">Book / Contact</a></div>
+</section>
+<section id="music">
+  <h2>Latest Visual</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/caUXwZ8SBXM" title="PLANIT DROOL — Oh Shit" frameborder="0" allowfullscreen></iframe>
+</section>
+<section id="merch">
+  <h2>Merch</h2>
+  <div class="product-grid">
+    <div class="product"><img src="assets/logo-hoodie-front.jpg" alt="DROOL VS Logo Hoodie front"/><p>DROOL VS Hoodie</p><a href="https://www.bonfire.com/" class="btn">I want one</a></div>
   </div>
-
-  <!-- Hero -->
-  <section id="home" class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(98,102,255,0.15),transparent_70%)]"></div>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="reveal">
-          <h1 class="text-4xl sm:text-6xl font-black leading-tight">Voices <span class="text-brand-400">Unheard</span> Of</h1>
-          <p class="mt-5 text-white/80 max-w-prose">Artist. Engineer. Villain arc in real time. Signed to <strong>Broken Records Ent.</strong> — and also its owner/founder. Two records a year, wild features in between, and shows that feel like group therapy with 808s.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#featured" class="px-5 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 transition font-medium">Watch “Oh Shit”</a>
-            <a href="#shows" class="px-5 py-3 rounded-xl border border-white/20 hover:border-white/40">see shows</a>
-            <a href="#merch" class="px-5 py-3 rounded-xl border border-white/20 hover:border-white/40">shop merch</a>
-          </div>
-          <p class="mt-6 text-xs uppercase tracking-widest text-white/50">Los Angeles, CA • Broken Records Ent.</p>
-        </div>
-        <div class="reveal">
-          <div class="aspect-video rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5">
-            <!-- Promo reel / trailer (optional) -->
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed?listType=playlist&list=PL" title="PLANIT DROOL — video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="mt-3 text-xs text-white/60">Tip: can be a sizzle reel or live clip.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Single: "Oh Shit" -->
-  <section id="featured" class="border-t border-white/10 py-16">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-extrabold">New Single — “Oh Shit”</h2>
-        <p class="mt-2 text-white/70">Watch on YouTube below. We’ll add DSP links after.</p>
-        <div class="mt-6 rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video">
-          <!-- Replace VIDEO_ID after you send the link -->
-          <iframe id="ohshit" class="w-full h-full" src="https://www.youtube.com/embed/caUXwZ8SBXM" title="PLANIT DROOL — Oh Shit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Music -->
-  <section id="music" class="border-t border-white/10 py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between gap-6">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold">Latest drops</h2>
-          <p class="mt-2 text-white/70">Stream the newest singles and full projects.</p>
-        </div>
-        <div class="text-sm text-white/60">Updated bi‑weekly</div>
-      </div>
-      <div class="mt-8 grid lg:grid-cols-2 gap-8">
-        <div class="reveal">
-          <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-          </div>
-        </div>
-        <div class="reveal grid grid-cols-1 gap-6">
-          <article class="p-5 rounded-2xl ring-1 ring-white/10 bg-white/5">
-            <h3 class="font-bold">PHONEHEADZ Won’t Let Go</h3>
-            <p class="mt-1 text-sm text-white/70">Debut saga • minor‑key, heavy swing • haunted hooks.</p>
-            <div class="mt-3 flex gap-3 text-sm">
-              <a class="underline hover:no-underline" href="#">Apple Music</a>
-              <a class="underline hover:no-underline" href="#">Spotify</a>
-              <a class="underline hover:no-underline" href="#">YouTube</a>
-            </div>
-          </article>
-          <article class="p-5 rounded-2xl ring-1 ring-white/10 bg-white/5">
-            <h3 class="font-bold">Paintingz of a Villain</h3>
-            <p class="mt-1 text-sm text-white/70">Part II • gallery of ghosts • rap/rock fractures.</p>
-            <div class="mt-3 flex gap-3 text-sm">
-              <a class="underline hover:no-underline" href="#">Apple Music</a>
-              <a class="underline hover:no-underline" href="#">Spotify</a>
-              <a class="underline hover:no-underline" href="#">YouTube</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Shows + Flyer -->
-  <section id="shows" class="border-t border-white/10 py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold">Shows & Open Mics</h2>
-          <p class="mt-2 text-white/70">Now hosting <strong>every Saturday</strong>. When it’s too packed, we switch to venues.</p>
-        </div>
-        <a href="#subscribe" class="hidden sm:inline-flex px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-400">RSVP</a>
-      </div>
-
-      <ul class="mt-8 grid md:grid-cols-2 gap-6">
-        <li class="reveal p-5 rounded-2xl ring-1 ring-white/10 bg-white/5 flex items-center justify-between">
-          <div>
-            <p class="text-sm text-white/60">Saturday • 7:00 PM</p>
-            <p class="font-semibold">Open Mic — Woodland Hills</p>
-            <p class="text-sm text-white/60">Sober Living Community Room • All-ages • Free</p>
-          </div>
-          <a class="px-3 py-1.5 rounded-lg border border-white/20 hover:border-white/40 text-sm" href="#subscribe">Notify me</a>
-        </li>
-        <li class="reveal p-5 rounded-2xl ring-1 ring-white/10 bg-white/5 flex items-center justify-between">
-          <div>
-            <p class="text-sm text-white/60">TBD</p>
-            <p class="font-semibold">Small‑Venue Run — Los Angeles</p>
-            <p class="text-sm text-white/60">Goal: sell out rooms (100–250 cap) within 6 months</p>
-          </div>
-          <a class="px-3 py-1.5 rounded-lg border border-white/20 hover:border-white/40 text-sm" href="#subscribe">Get updates</a>
-        </li>
-      </ul>
-
-      <!-- Flyer anchor -->
-      <div id="flyer" class="reveal mt-10">
-        <h3 class="text-xl font-semibold">This Week's Flyer</h3>
-        <div class="mt-3 rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5">
-          <!-- Use the provided filename -->
-          <img src="/assets/open_mic_flyer.png" alt="PLANIT DROOL — Saturday Open Mic Flyer" class="w-full h-auto cursor-zoom-in" data-lightbox data-full="/assets/open_mic_flyer.png" />
-        </div>
-        <div class="mt-2 text-sm text-white/60">Want your name on the flyer? <a class="underline" href="#contact">Book a slot</a>.</div>
-      </div>
-
-      <div class="mt-6 text-xs text-white/50">Want me in your city or at your venue? <a class="underline" href="#contact">Book here</a>.</div>
-    </div>
-  </section>
-
-  <!-- Merch -->
-  <section id="merch" class="border-t border-white/10 py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold">Merch</h2>
-          <p class="mt-2 text-white/70">Limited drops • hand‑painted pieces • Bonfire storefront.</p>
-        </div>
-        <a href="https://www.bonfire.com/store/" class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-white/20 hover:border-white/40">Visit Store</a>
-      </div>
-
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="reveal group rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5">
-          <div class="aspect-[4/3] bg-white/5 flex items-center justify-center text-white/40">Artwork here</div>
-          <div class="p-4 flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold">DROOL VS Tee</h3>
-              <p class="text-sm text-white/60">Black • S–XXL</p>
-            </div>
-            <a href="#" class="text-sm underline opacity-80 group-hover:opacity-100">Buy</a>
-          </div>
-        </article>
-        <article class="reveal group rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5">
-          <div class="aspect-[4/3] bg-white/5 flex items-center justify-center text-white/40">Artwork here</div>
-          <div class="p-4 flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold">Broken Records Hoodie</h3>
-              <p class="text-sm text-white/60">Charcoal • S–XXL</p>
-            </div>
-            <a href="#" class="text-sm underline opacity-80 group-hover:opacity-100">Buy</a>
-          </div>
-        </article>
-        <article class="reveal group rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5">
-          <div class="aspect-[4/3] bg-white/5 flex items-center justify-center text-white/40">Artwork here</div>
-          <div class="p-4 flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold">Hand‑Painted One‑Off</h3>
-              <p class="text-sm text-white/60">Drop‑date: TBA</p>
-            </div>
-            <a href="#" class="text-sm underline opacity-80 group-hover:opacity-100">Details</a>
-          </div>
-        </article>
-      </div>
-
-      <p class="mt-4 text-xs text-white/60">For custom pieces or bulk orders, <a class="underline" href="#contact">contact me</a>.</p>
-    </div>
-  </section>
-
-  <!-- Fan Gallery: people wearing the merch -->
-  <section id="gallery" class="border-t border-white/10 py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-extrabold">Fan Gallery</h2>
-      <p class="mt-2 text-white/70">Real ones in the wild. Tag <span class="underline">@droolvs</span> for a feature.</p>
-      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
-        <!-- Four provided photos -->
-        <img src="/assets/gallery/chris-jacket-front.jpg" alt="Chris wearing DROOL VS jacket — front" class="reveal rounded-xl object-cover w-full aspect-square cursor-zoom-in" data-lightbox data-full="/assets/gallery/chris-jacket-front.jpg" />
-        <img src="/assets/gallery/chris-jacket-back.jpg" alt="Chris wearing DROOL VS jacket — back" class="reveal rounded-xl object-cover w-full aspect-square cursor-zoom-in" data-lightbox data-full="/assets/gallery/chris-jacket-back.jpg" />
-        <img src="/assets/gallery/josh-jacket-front.jpg" alt="Josh wearing DROOL VS jacket — front" class="reveal rounded-xl object-cover w-full aspect-square cursor-zoom-in" data-lightbox data-full="/assets/gallery/josh-jacket-front.jpg" />
-        <img src="/assets/gallery/josh-jacket-back.jpg" alt="Josh wearing DROOL VS jacket — back" class="reveal rounded-xl object-cover w-full aspect-square cursor-zoom-in" data-lightbox data-full="/assets/gallery/josh-jacket-back.jpg" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Subscribe -->
-  <section id="subscribe" class="border-t border-white/10 py-20">
-    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-extrabold">Join the inner circle</h2>
-      <p class="mt-2 text-white/70">Early access to drops, show invites, and behind‑the‑scenes studio notes.</p>
-      <form class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3" action="https://formspree.io/f/yourcode" method="POST">
-        <input class="sm:col-span-1 px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 placeholder-white/50 focus:outline-none focus:ring-brand-400" type="text" name="first_name" placeholder="First name" required>
-        <input class="sm:col-span-1 px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 placeholder-white/50 focus:outline-none focus:ring-brand-400" type="email" name="email" placeholder="Email" required>
-        <button class="sm:col-span-1 px-4 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 font-semibold">Sign me up</button>
-        <input type="hidden" name="list" value="main-newsletter" />
-      </form>
-      <p class="mt-3 text-xs text-white/50">No spam. Unsubscribe anytime.</p>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="border-t border-white/10 py-20">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-extrabold">Booking & Contact</h2>
-      <p class="mt-2 text-white/70">For shows, features, and press. Expect a response within 48 hours.</p>
-      <form class="mt-6 grid grid-cols-1 gap-4" action="https://formspree.io/f/yourcode" method="POST">
-        <div class="grid sm:grid-cols-2 gap-4">
-          <input class="px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 placeholder-white/50 focus:outline-none focus:ring-brand-400" type="text" name="first_name" placeholder="First name" required>
-          <input class="px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 placeholder-white/50 focus:outline-none focus:ring-brand-400" type="text" name="last_name" placeholder="Last name" required>
-        </div>
-        <input class="px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 placeholder-white/50 focus:outline-none focus:ring-brand-400" type="email" name="email" placeholder="Email" required>
-        <input class="px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 placeholder-white/50 focus:outline-none focus:ring-brand-400" type="text" name="subject" placeholder="Subject" required>
-        <textarea class="px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 placeholder-white/50 focus:outline-none focus:ring-brand-400 min-h-[140px]" name="message" placeholder="Tell me about the opportunity…" required></textarea>
-        <button class="px-5 py-3 rounded-xl bg-white text-black hover:bg-brand-300 font-semibold" type="submit">Send</button>
-      </form>
-      <div class="mt-6 text-sm text-white/60">
-        <p>Business/Label: Broken Records Ent. (owner/founder)</p>
-        <p>Based in Los Angeles, CA</p>
-        <p>DMs open: <a class="underline" href="https://instagram.com/droolvs">@droolvs</a></p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="border-t border-white/10 py-12">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="text-sm text-white/60">© <span id="y"></span> PLANIT DROOL • Voices Unheard Of</div>
-      <div class="flex items-center gap-4 text-sm">
-        <a class="hover:text-brand-300" href="https://instagram.com/droolvs" aria-label="Instagram">Instagram</a>
-        <a class="hover:text-brand-300" href="https://tiktok.com/@droolvs" aria-label="TikTok">TikTok</a>
-        <a class="hover:text-brand-300" href="https://youtube.com/@planitdrool" aria-label="YouTube">YouTube</a>
-        <a class="hover:text-brand-300" href="#" aria-label="Spotify">Spotify</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Lightbox modal -->
-  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 p-4">
-    <button id="lbClose" class="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20">Close ✕</button>
-    <button id="lbPrev" class="absolute left-4 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20">‹</button>
-    <img id="lbImg" src="" alt="Gallery image" class="max-h-[85vh] w-auto rounded-xl ring-1 ring-white/20" />
-    <button id="lbNext" class="absolute right-4 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20">›</button>
+</section>
+<section id="shows">
+  <h2>Shows & Open Mics</h2>
+  <div class="flyer"><img src="assets/open_mic_flyer.png" alt="Open Mic Flyer"/></div>
+</section>
+<section id="gallery">
+  <h2>Fan Gallery</h2>
+  <div class="grid">
+    <img src="assets/gallery/chris-jacket-front.jpg" alt="Chris front"/>
+    <img src="assets/gallery/chris-jacket-back.jpg" alt="Chris back"/>
+    <img src="assets/gallery/josh-jacket-front.jpg" alt="Josh front"/>
+    <img src="assets/gallery/josh-jacket-back.jpg" alt="Josh back"/>
   </div>
-
-  <!-- Small JS: year + reveal + featured video swap + lightbox -->
-  <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear()
-
-    // Reveal on scroll
-    const io = new IntersectionObserver((en)=>en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('revealed')}),{threshold:0.1});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el))
-
-    // Allow quick swap of featured video via URL query (e.g., ?v=VIDEO_ID)
-    const params=new URLSearchParams(location.search); const v=params.get('v');
-    if(v){ const el=document.getElementById('ohshit'); if(el){ el.src=`https://www.youtube.com/embed/${v}`; }}
-
-    // Simple Lightbox for any [data-lightbox]
-    const images=[...document.querySelectorAll('[data-lightbox]')];
-    const lb=document.getElementById('lightbox');
-    const lbImg=document.getElementById('lbImg');
-    const lbPrev=document.getElementById('lbPrev');
-    const lbNext=document.getElementById('lbNext');
-    const lbClose=document.getElementById('lbClose');
-    let idx=0;
-
-    function openLB(i){ idx=i; lbImg.src=images[idx].dataset.full||images[idx].src; lb.classList.remove('hidden'); document.body.classList.add('no-scroll'); }
-    function closeLB(){ lb.classList.add('hidden'); document.body.classList.remove('no-scroll'); }
-    function prev(){ idx=(idx-1+images.length)%images.length; lbImg.src=images[idx].dataset.full||images[idx].src; }
-    function next(){ idx=(idx+1)%images.length; lbImg.src=images[idx].dataset.full||images[idx].src; }
-
-    images.forEach((img,i)=>img.addEventListener('click',()=>openLB(i)));
-    lbClose.addEventListener('click',closeLB);
-    lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
-    lbPrev.addEventListener('click',prev); lbNext.addEventListener('click',next);
-    window.addEventListener('keydown',e=>{ if(lb.classList.contains('hidden')) return; if(e.key==='Escape') closeLB(); if(e.key==='ArrowLeft') prev(); if(e.key==='ArrowRight') next(); });
-
-    // Optional: fetch shows from /shows.json if present
-    // fetch('/shows.json').then(r=>r.ok?r.json():null).then(data=>{ /* render shows list here */ }).catch(()=>{})
-  </script>
-
-  <!-- Optional analytics: Plausible (swap domain) -->
-  <!-- <script defer data-domain="planitdrool.com" src="https://plausible.io/js/script.js"></script> -->
-</body>
-</html>
+</section>
+<section id="contact">
+  <h2>Booking / Contact</h2>
+  <form action="https://formspree.io/f/yourcode" method="POST">
+    <input type="text" name="first_name" placeholder="First name" required/>
+    <input type="text" name="last_name" placeholder="Last name" required/>
+    <input type="email" name="email" placeholder="Email" required/>
+    <textarea name="message" placeholder="Tell me about the opportunity…" required></textarea>
+    <button type="submit" class="btn">Send</button>
+  </form>
+</section>
+<footer><p>© 2025 DROOL VS • All Rights Reserved</p></footer>
+</body></html>
