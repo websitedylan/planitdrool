@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DROOL VS — About</title>
+  <meta name="description" content="About PLANIT DROOL (DROOL VS) — artist, songwriter, mix-engineer in Los Angeles." />
+  <link rel="canonical" href="https://planitdrool.com/about.html" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Go to Home">
+        <img src="assets/logo.png" alt="DROOL VS logo" class="logo-img" />
+        <img src="assets/wordmark.png" alt="DROOL VS wordmark" class="wordmark-img" />
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="music.html">Music / Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" hidden>
+    <div class="container" style="padding:10px 0 14px; display:grid; gap:8px">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music / Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <main class="container" style="padding:80px 0 40px">
+    <h1 class="title" style="margin-bottom:6px;">About</h1>
+    <p class="muted">PLANIT DROOL (DROOL VS) — artist, songwriter, and mix-engineer.</p>
+
+    <section>
+      <div class="grid" style="grid-template-columns:1.2fr .8fr">
+        <div>
+          <p>I blend hook-heavy dark-pop with rock-rap energy and Baton Rouge grit, building the villainverse under Broken Records Entertainment.</p>
+          <p class="muted">Influences: Weezer, Red Hot Chili Peppers, Hollywood Undead, Eminem, Lil Wayne. Based in Los Angeles; currently studying audio engineering at LAFS and releasing two projects a year with singles in between.</p>
+        </div>
+        <div class="card">
+          <ul class="muted" style="margin:0; padding-left:18px; line-height:1.8;">
+            <li>Home studio: Ableton Live 12, Scarlett 2i2, AT mic & headphones, Auto-Tune, Splice</li>
+            <li>Services: writing, recording, vocal production, mixing</li>
+            <li>Highlights: Open-mic host, “Skeleton in My Closet”, <em>Phoneheadz</em> trilogy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
+      <div class="muted tiny">© <span id="year"></span> DROOL VS · All Rights Reserved</div>
+      <div class="muted tiny">Built with ♥ by you.</div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () =>{
+      const open = menu.hasAttribute('hidden');
+      if(open){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+      else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
