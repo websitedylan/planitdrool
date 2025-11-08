@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DROOL VS — Contact</title>
+  <meta name="description" content="Booking and contact for PLANIT DROOL (DROOL VS)." />
+  <link rel="canonical" href="https://planitdrool.com/contact.html" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Go to Home">
+        <img src="assets/logo.png" alt="DROOL VS logo" class="logo-img" />
+        <img src="assets/wordmark.png" alt="DROOL VS wordmark" class="wordmark-img" />
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="music.html">Music / Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" hidden>
+    <div class="container" style="padding:10px 0 14px; display:grid; gap:8px">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music / Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <main class="container" style="padding:80px 0 40px">
+    <h1 class="title" style="margin-bottom:6px;">Contact</h1>
+    <p class="muted">For bookings, features, or mixing, use the form or email <a href="mailto:Dayumson27@gmail.com">Dayumson27@gmail.com</a>.</p>
+
+    <section>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr">
+        <form class="card" id="contactForm" action="https://formspree.io/f/xdklabjj" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New message from DROOL VS site" />
+          <!-- Honeypot -->
+          <label class="tiny" style="position:absolute;left:-9999px;opacity:0" for="website">Website</label>
+          <input id="website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" />
+
+          <div class="row" style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+            <div>
+              <label class="tiny" for="first">First name</label>
+              <input id="first" name="first" required placeholder="Jane" />
+            </div>
+            <div>
+              <label class="tiny" for="last">Last name</label>
+              <input id="last" name="last" required placeholder="Doe" />
+            </div>
+          </div>
+
+          <div class="row" style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+            <div>
+              <label class="tiny" for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="jane@example.com" />
+            </div>
+            <div>
+              <label class="tiny" for="subject">Subject</label>
+              <input id="subject" name="subject" placeholder="Booking / Collab / Press" />
+            </div>
+          </div>
+
+          <div>
+            <label class="tiny" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the show, dates, budget, or idea…"></textarea>
+          </div>
+
+          <button class="btn" type="submit" id="sendBtn">Send</button>
+          <input type="hidden" name="form_name" value="droolvs_site_contact" />
+          <p id="formNote" class="tiny" style="margin-top:8px;color:var(--muted)" aria-live="polite"></p>
+        </form>
+
+        <div class="card">
+          <div class="pill" style="margin-bottom:12px">Info</div>
+          <p class="muted">Serious inquiries only. For features, beats, and show bookings in LA (and beyond), drop details and socials. I usually respond within 24–48 hours.</p>
+          <ul class="muted">
+            <li>Email: <a href="mailto:Dayumson27@gmail.com">Dayumson27@gmail.com</a></li>
+            <li>Based in: Los Angeles, CA</li>
+            <li>Genres: Emo-rap, alt-hip-hop, dark pop</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
+      <div class="muted tiny">© <span id="year"></span> DROOL VS · All Rights Reserved</div>
+      <div class="muted tiny">Built with ♥ by you.</div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () =>{
+      const open = menu.hasAttribute('hidden');
+      if(open){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+      else{ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Formspree async submit with inline feedback
+    (function(){
+      const form = document.getElementById('contactForm');
+      const note = document.getElementById('formNote');
+      const sendBtn = document.getElementById('sendBtn');
+      if(!form) return;
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(document.getElementById('website')?.value){ return; } // honeypot
+        sendBtn.disabled = true; sendBtn.textContent = 'Sending…'; note.textContent = '';
+        const data = Object.fromEntries(new FormData(form).entries());
+        try{
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          if(res.ok){
+            form.reset();
+            note.style.color = '#88f0a1';
+            note.textContent = 'Thanks! Your message was sent.';
+          } else {
+            note.style.color = '#ff9aa2';
+            note.textContent = 'Something went wrong. Try again or email me directly.';
+          }
+        }catch(err){
+          note.style.color = '#ff9aa2';
+          note.textContent = 'Network error. Please try again.';
+        } finally{
+          sendBtn.disabled = false; sendBtn.textContent = 'Send';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
